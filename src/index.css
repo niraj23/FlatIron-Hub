@@ -30,3 +30,31 @@ h2 {
 h3 {
   color: rgb(0, 0, 0);
 }
+
+#search {
+  display: block;
+  width: 60% !important;
+  margin-right:175px;
+  margin-left:auto;
+  opacity: 0.9
+/*  
+  margin-right: 0.25em!important;
+  margin-left: 0.25em!important; */
+}
+.ui.segment {
+  opacity: .9;
+  background-color: #C0C0C0;
+}
+
+.blog-post {
+  width: 100%;
+  max-width: 98rem;
+  padding: 5rem;
+  background-color: rgb(255, 255, 255);
+  opacity: .9;
+  box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: .8rem;
+  margin: 10px;
+}
