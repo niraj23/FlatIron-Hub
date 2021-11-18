@@ -2,45 +2,48 @@
   "learnItems": [
     {
       "id": 1,
+      "postername": "React Devs",
       "name": "Using React",
-      "description": "Learn the Basics of React",
-      "Image": "https://www.mobinius.com/wp-content/uploads/2020/02/reactjs-2.png",
-      "URL": "https://reactjs.org/community/articles.html"
+      "description": "Learn the Basics of React with articles directly from the React community",
+      "image": "https://www.mobinius.com/wp-content/uploads/2020/02/reactjs-2.png",
+      "url": "https://reactjs.org/community/articles.html",
+      "postdate": "November 18th 2021"
     },
     {
       "id": 2,
+      "postername": "Niraj Patel",
       "name": "Flatiron School Bash Commands",
       "description": "Simple bash commands to help with forking repo’s and pushing commits.",
-      "Image": "https://miro.medium.com/max/1400/1*ISAjTNGIY00nhVZt_p8ILQ.png",
-      "URL": "https://nirajpatel23.medium.com/flatiron-school-bash-commands-daf708e2e3ea"
+      "image": "https://miro.medium.com/max/1400/1*ISAjTNGIY00nhVZt_p8ILQ.png",
+      "url": "https://nirajpatel23.medium.com/flatiron-school-bash-commands-daf708e2e3ea",
+      "postdate": "November 18th 2021"
     },
     {
       "id": 3,
+      "postername": "Michael Toth",
       "name": "Useful Mac Shortcuts in VS Code",
       "description": "Useful Mac Shortcuts in VS Code",
-      "Image": "https://miro.medium.com/max/700/0*WWlrQgpU5ECWlnHc",
-      "URL": "https://medium.com/@mtoth003/useful-mac-shortcuts-in-vs-code-51d794636fac"
+      "image": "https://miro.medium.com/max/700/0*WWlrQgpU5ECWlnHc",
+      "url": "https://medium.com/@mtoth003/useful-mac-shortcuts-in-vs-code-51d794636fac",
+      "postdate": "November 18th 2021"
     },
     {
       "id": 4,
+      "postername": "Louis Jacob",
       "name": "For… what? Simple Iteration of Objects and Arrays ",
-      "description": "Iteration of Objects and Arrays",
-      "Image": "https://miro.medium.com/max/960/1*Eou3QWGAOPfhjsXcu45TOw.gif",
-      "URL": "https://medium.com/@loujacob2/for-what-simple-iteration-of-objects-and-arrays-d13efb2358cd"
+      "description": "Learn the basics of iteration of Objects and Arrays with this beginner's guide",
+      "image": "https://miro.medium.com/max/960/1*Eou3QWGAOPfhjsXcu45TOw.gif",
+      "url": "https://medium.com/@loujacob2/for-what-simple-iteration-of-objects-and-arrays-d13efb2358cd",
+      "postdate": "November 18th 2021"
     },
     {
       "id": 5,
+      "postername": "Traversy Media",
       "name": "React JS Crash Course 2021",
-      "description": "React Crash Course for beginners",
-      "Image": "https://cdn.vox-cdn.com/thumbor/r3AM_q5ktTjtd8gjoFwpAakshaA=/0x0:1680x1050/1400x1050/filters:focal(706x391:974x659):format(gif)/cdn.vox-cdn.com/uploads/chorus_image/image/56414325/YTLogo_old_new_animation.0.gif",
-      "URL": "https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=1268s"
-    },
-    {
-      "name": "test",
-      "description": "test",
-      "image": "test",
-      "URL": "test",
-      "id": 6
+      "description": "Follow along with this React Crash Course for beginners",
+      "image": "https://cdn.vox-cdn.com/thumbor/r3AM_q5ktTjtd8gjoFwpAakshaA=/0x0:1680x1050/1400x1050/filters:focal(706x391:974x659):format(gif)/cdn.vox-cdn.com/uploads/chorus_image/image/56414325/YTLogo_old_new_animation.0.gif",
+      "url": "https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=1268s",
+      "postdate": "November 18th 2021"
     }
   ]
 }
