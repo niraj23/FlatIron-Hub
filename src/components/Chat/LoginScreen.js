@@ -46,14 +46,15 @@ const LoginScreen = () => {
             <h2 style={{color: 'black', fontFamily: 'Trattatello, fantasy'}}>Flatiron Chat! </h2>
             <div>
                <Input inputProps={ariaLabel} style={{fontSize: 'medium'}}
+               type="text"
                placeholder="Username"
                className="login-input"
                onChange={(e) => setUsername(e.target.value)}
                />
             </div>
             <div>
-               <Input inputProps={ariaLabel} style={{fontSize: 'medium'}}
-               type="secret"
+               <Input inputProps={ariaLabel} style={{fontSize: 'medium'}} 
+               type="password"
                placeholder="secret"
                className="login-input"
                onChange={(e) => setSecret(e.target.value)}
