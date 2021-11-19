@@ -2,26 +2,36 @@ import {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import GamesContainer from './GamesContainer'
 import GamesSearch from './GamesSearch'
-import GamesPagination from './GamesPagination'
 import {CgGames} from 'react-icons/cg'
+import Video from '../../videos/Video.mp4'
+import NavBar from '../Home/NavBar'
+import GamesPagination from './GamesPagination'
+
 
 function GamesPage(){
-    const [games, setGames] = useState([])
-    const [search, setSearch] = useState("")
+    const [games, setGames] = useState([]);
+    const [search, setSearch] = useState("");
+    const [sortBy, setSortBy] = useState("");
     const [currentPage, setCurrentPage] = useState(1)
     const [gamesPerPage, setGamesPerPage] = useState(20)
 
+    const handleSort = (e) => {
+        let newList = [...games]
+        setSortBy(e.target.value);
+        setGames((newList.sort((a,b) => 
+          sortBy !== "platform" ? a.platform.localeCompare(b.platform) : a.title.localeCompare(b.title)
+        )))
+      }    
     
     useEffect(() => {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const proxyurl = "https://enigmatic-island-73896.herokuapp.com/";
         const url = 'https://www.freetogame.com/api/games';
         
         fetch(proxyurl + url)
         .then((res) => res.json())
         .then((games) => setGames(games))
     }, [])
-    
-    
+
     const indexOfLastGame = currentPage * gamesPerPage
     const indexOfFirstGame = indexOfLastGame - gamesPerPage;
     const currentGames = games.slice(indexOfFirstGame, indexOfLastGame)
@@ -33,11 +43,15 @@ function GamesPage(){
     return(
         <>
         <TitleContainer>
-            <h1> <CgGames color="white" /> Free PC and Browser Games <CgGames color="white"/></h1>
+        <video id="home-video" autoPlay loop muted src={Video} type='video/mp4'>
+            </video>
+                <NavBar/>
+            <h1 > <CgGames color="red" /> Free PC and Browser Games <CgGames color="red"/></h1>
         </TitleContainer>
-            <GamesSearch search={search} onSearch={setSearch}/>
-            <GamesContainer filteredGames={filteredGames} />
-            <GamesPagination gamesPerPage={gamesPerPage} totalGames={games.length} paginate={paginate}/>
+        
+            <GamesSearch search={search} onSearch={setSearch} sortBy={sortBy} handleSort={handleSort}/>
+            <GamesContainer games={filteredGames} />
+            <GamesPagination gamesPerPage={gamesPerPage} totalGames={games.length} paginate={paginate} />
         </>
         
     )
