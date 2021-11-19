@@ -1,5 +1,4 @@
-import React from 'react'
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const GamesPagination = ({gamesPerPage, totalGames, paginate}) => {
     const pageNumbers = []
@@ -8,7 +7,6 @@ const GamesPagination = ({gamesPerPage, totalGames, paginate}) => {
     }
     return (
         <PaginationContainer>
-    
             <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={number} className="page-item">
@@ -17,12 +15,12 @@ const GamesPagination = ({gamesPerPage, totalGames, paginate}) => {
                 ))}
             </ul>
         </PaginationContainer>
+
     )
 }
 
 export default GamesPagination
 
 const PaginationContainer = styled.div`
-    display: inline-block
+    display: inline-block;
 `
-
