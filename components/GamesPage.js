@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import GamesContainer from './GamesContainer'
 import GamesSearch from './GamesSearch'
+import GamesPagination from './GamesPagination'
 import {CgGames} from 'react-icons/cg'
 
 function GamesPage(){
