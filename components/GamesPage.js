@@ -7,6 +7,8 @@ import {CgGames} from 'react-icons/cg'
 function GamesPage(){
     const [games, setGames] = useState([])
     const [search, setSearch] = useState("")
+    const [currentPage, setCurrentPage] = useState(1)
+    const [gamesPerPage, setGamesPerPage] = useState(20)
 
     
     useEffect(() => {
@@ -17,10 +19,15 @@ function GamesPage(){
         .then((res) => res.json())
         .then((games) => setGames(games))
     }, [])
+    
+    
+    const indexOfLastGame = currentPage * gamesPerPage
+    const indexOfFirstGame = indexOfLastGame - gamesPerPage;
+    const currentGames = games.slice(indexOfFirstGame, indexOfLastGame)
 
-    const filteredGames = games.filter((game) => game.title.toLowerCase().includes(search.toLowerCase()))
+    const filteredGames = currentGames.filter((game) => game.title.toLowerCase().includes(search.toLowerCase()))
 
-
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
     return(
         <>
@@ -28,7 +35,8 @@ function GamesPage(){
             <h1> <CgGames color="white" /> Free PC and Browser Games <CgGames color="white"/></h1>
         </TitleContainer>
             <GamesSearch search={search} onSearch={setSearch}/>
-            <GamesContainer games={filteredGames} />
+            <GamesContainer filteredGames={filteredGames} />
+            <GamesPagination gamesPerPage={gamesPerPage} totalGames={games.length} paginate={paginate}/>
         </>
         
     )
