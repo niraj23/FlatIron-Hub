@@ -8,9 +8,11 @@ function AddLearn({onAddLearn}){
     const [name, setName] = useState("")
     const [description, setDescription] = useState ("")
     const [image, setImage] = useState("")
-    const [URL, setURL] = useState("")
+    const [url, setUrl] = useState("")
     const [postdate, setPostDate] = useState("")
     const [postername, setPosterName] = useState("")
+
+    
     function handleSubmit (e) {
         e.preventDefault();
         fetch ("https://my-cool-projs.herokuapp.com/learnItems", {
@@ -22,7 +24,7 @@ function AddLearn({onAddLearn}){
                 name: name,
                 description: description,
                 image: image,
-                URL: URL,
+                url: url,
                 postdate: postdate,
                 postername: postername
             }),
@@ -75,7 +77,7 @@ function AddLearn({onAddLearn}){
                   type="text"
                   name="url"
                   value = {URL}
-                  onChange ={(e) => setURL(e.target.value)}
+                  onChange ={(e) => setUrl(e.target.value)}
                   placeholder= "URL Link here"
                   />
                 </div>

@@ -5,6 +5,7 @@ import GamesSearch from './GamesSearch'
 import {CgGames} from 'react-icons/cg'
 import Video from '../../videos/Video.mp4'
 import NavBar from '../Home/NavBar'
+import axios from 'axios'
 
 
 function GamesPage(){
@@ -20,14 +21,17 @@ function GamesPage(){
         )))
       }    
     
-    useEffect(() => {
+      useEffect(() => {
         const proxyurl = "https://enigmatic-island-73896.herokuapp.com/";
         const url = 'https://www.freetogame.com/api/games';
         
-        fetch(proxyurl + url)
-        .then((res) => res.json())
-        .then((games) => setGames(games))
-    }, [])
+        const fetchGames = async () => {
+            const res = await axios.get(proxyurl + url);
+            setGames(res.data);
+          };
+      
+          fetchGames();
+        }, []);
 
     const filteredGames = games.filter((game) => game.title.toLowerCase().includes(search.toLowerCase()))
 

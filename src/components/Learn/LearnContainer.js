@@ -4,6 +4,9 @@ import AddLearn from "./AddLearn"
 import Search from "./Search";
 import {useState} from 'react';
 import {useEffect } from 'react';
+import axios from "axios";
+
+
 function LearnContainer() {
     const[ learnItems, setLearnItems ] = useState ([]);
     const[ searchTerm, setSearchTerm] = useState ('')
@@ -18,12 +21,14 @@ function LearnContainer() {
       } 
 
     useEffect(() => {
-        fetch("https://my-cool-projs.herokuapp.com/learnItems")
-        .then ((res) => res.json())
-        .then ((learnItemsArray ) => {
-            setLearnItems (learnItemsArray)
-        })
-    }, []);
+        const fetchLearn = async () => {
+            const res = await axios.get("https://my-cool-projs.herokuapp.com/learnItems");
+            setLearnItems(res.data);
+          };
+    fetchLearn();
+}, []);
+
+
     function handleAddLearnItems(newLearnItem) {
         const updatedLearnItemsArray = [...learnItems, newLearnItem];
         setLearnItems(updatedLearnItemsArray);

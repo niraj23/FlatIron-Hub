@@ -13,7 +13,7 @@ return (
       Flatiron Hub
     </Navbar.Brand>
     <Nav>
-      <Nav.Item as={NavLink} to="/home" icon={<FaHomeIcon />} size="2em" style={{ color: '#61dafb'}}>Home</Nav.Item>
+      <Nav.Item as={NavLink} to="/" icon={<FaHomeIcon />} size="2em" style={{ color: '#61dafb'}}>Home</Nav.Item>
       <Nav.Item as={NavLink} to="/login" style={{ color: 'white'}}>Chat</Nav.Item>
       <Nav.Item as={NavLink} to="/games"style={{ color: 'white' }}>Games</Nav.Item>
       <Nav.Item as={NavLink} to="/learn"style={{ color: 'white' }}>Learn</Nav.Item>

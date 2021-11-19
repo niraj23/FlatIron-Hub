@@ -54,9 +54,6 @@ function VideoChat() {
         remoteVideoRef.current.play();
       });
 
-      call.on('close', () => {
-          remoteVideoRef.current.remove()
-      })
     });
   }
 

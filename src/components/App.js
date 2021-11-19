@@ -15,8 +15,7 @@ function App() {
       <Router>
         <Switch>
           <ContextProvider>
-            <Redirect exact from="/" to="/home" />
-            <Route path="/home" exact component={Home} /> 
+            <Route path="/" exact component={Home} /> 
             <Route path='/videochat' component={VideoChat} />
             <Route path="/devs" component={DevPage} />
             <Route path="/learn" component={Learn} />
