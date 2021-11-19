@@ -21,7 +21,7 @@ function GamesPage(){
       }    
     
     useEffect(() => {
-        const proxyurl = "https://cors-anywhere.herokuapp.com/";
+        const proxyurl = "https://enigmatic-island-73896.herokuapp.com/";
         const url = 'https://www.freetogame.com/api/games';
         
         fetch(proxyurl + url)
@@ -39,7 +39,7 @@ function GamesPage(){
         <video id="home-video" autoPlay loop muted src={Video} type='video/mp4'>
             </video>
                 <NavBar/>
-            <h1> <CgGames color="red" /> Free PC and Browser Games <CgGames color="red"/></h1>
+            <h1 > <CgGames color="red" /> Free PC and Browser Games <CgGames color="red"/></h1>
         </TitleContainer>
         
             <GamesSearch search={search} onSearch={setSearch} sortBy={sortBy} handleSort={handleSort}/>

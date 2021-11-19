@@ -11,7 +11,7 @@ const Home = () => {
                 <NavBar/>
             </div>
             <div id='title-container' style={{marginTop: '150px'}}>
-                <h1 id='home-title' style={{paddingLeft: '155px'}}>WELCOME TO THE FLATIRON HUB</h1>
+                <h1 id='home-title' style={{paddingLeft: '187px', fontFamily: 'Trattatello, fantasy', color: '#3700b3'}}>WELCOME TO THE FLATIRON HUB</h1>
             <div id='pages-container'>
                 <Pages/>
             </div>

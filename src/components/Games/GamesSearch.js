@@ -44,8 +44,7 @@ const Search = styled.div`
     text-align: center;
     padding-bottom: 20px;
     input{
-        width: 45%;
-        height: 30px;
+        width:40%; height:100%; border: 1px solid;
         opacity: 0.7;
         font-size: 20px;
     }

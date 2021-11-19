@@ -10,7 +10,7 @@ const DevPage = () => {
                 <NavBar/>
         <div id='title-container'>
                 <br /> <br /> <br /> <br /> 
-                <h1 id='home-title' style={{paddingLeft: '540px'}}>Meet The Devs</h1>
+                <h1 id='home-title' style={{paddingLeft: '590px', color: 'blue', fontFamily: 'Trattatello, fantasy'}}>Meet The Devs</h1>
         <div id='pages-container' style={{paddingLeft: '280px'}} >
                 <Devs/>
             </div>

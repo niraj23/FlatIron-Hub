@@ -1,6 +1,5 @@
 import React from "react";
 import LearnItem from "./LearnItem";
-
 function LearnList ({learnItems}) {
     return (
           <div>
@@ -17,6 +16,4 @@ function LearnList ({learnItems}) {
           </div>
       );
 }
-
 export default LearnList;
-

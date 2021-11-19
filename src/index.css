@@ -355,6 +355,7 @@ align-items: center;
 background-color: transparent;
 }
 
+
 #nav-container {
   width: 100%;
   height: 50px;
@@ -556,7 +557,7 @@ left: calc(50% - 5.625rem);
   flex-direction: row;
   position: fixed;
   padding: 8px 24px;
-  margin-top: 200px;
+  margin-top: 250px;
   margin-right: -500px;
   align-items: center;
   }
@@ -568,7 +569,7 @@ left: calc(50% - 5.625rem);
     flex-direction: row;
     position: fixed;
     padding: 8px 24px;
-    margin-top: 200px;
+    margin-top: 250px;
     margin-left: -600px;
     align-items: center;
     }
@@ -580,7 +581,7 @@ left: calc(50% - 5.625rem);
       flex-direction: row;
       position: fixed;
       padding: 8px 24px;
-      margin-top: 550px;
+      margin-top: 600px;
       margin-left: -50px;
       align-items: center;
       }
@@ -589,7 +590,7 @@ left: calc(50% - 5.625rem);
         z-index: 3;
         font-size: medium;
         position: fixed;
-        margin-top: 600px;
+        margin-top: 650px;
         margin-left: -50px;
         padding: 8px 24px;
         align-items: center;
@@ -637,7 +638,7 @@ html {
   width: 100%;
   max-width: 98rem;
   padding: 5rem;
-  background-color: gray;
+  background-color: #659dbd;
   box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
@@ -674,7 +675,7 @@ html {
 
 .blog-post_date span {
   display: block;
-  color: #00000080;
+  color: black;
   font-size: 1.6rem;
   font-weight: 600;
   margin: .5rem 0;
@@ -682,15 +683,15 @@ html {
 
 .blog-post_title {
   font-size: 2.5rem;
-  margin: 1.5rem 0 2rem;
   text-transform: uppercase;
-  color: #4facfe;
+  color: #daad86;
+  text-align: inherit;
 }
 
 .blog-post_text {
   margin-bottom: 3rem;
-  font-size: 1.4rem;
-  color: #000000b3;
+  font-size: 2.0rem;
+  color: black;
 }
 
 .blog-post_cta {
@@ -711,11 +712,10 @@ html {
 
 @media screen and (max-width: 1068px) {
   .blog-post {
-      max-width: 80rem;
+      max-width: 500rem;
   }
   .blog-post_img {
-      min-width: 30rem;
-      max-width: 30rem;
+    position: absolute; left: 0; height: 0; width: 100%; height: 100%
   }
   .container h2 {
       margin-top: 120px;
@@ -773,7 +773,36 @@ body{
 /* Learn  */
 
 #search {
-  width: 25% !important;
+  width: 99.2% !important;
   margin-right: 0.25em!important;
-  margin-left: 0.25em!important;
+  margin-left: 0.40em!important;
+  margin-top: -0.35em!important;
+  opacity: 0.9;
+  display: flex !important;
+  flex-direction: column !important;
 }
+/* Login Screen  */
+
+.submit {
+  width: 40%;
+  padding: 5px;
+  margin-top: 0%;
+  border-radius: 4px;
+  border-width: 0px;
+  cursor: pointer;
+  background-color: #6dc9fe;
+  color: black;
+  outline: none;
+}
+
+.login-input {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 24px;
+  background-color: #4a5162;
+  outline: none;
+  border-width: 0px;
+  border-bottom: 2px solid #0b0a2c;
+  color: white;
+}
+

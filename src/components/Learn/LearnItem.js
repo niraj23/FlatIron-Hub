@@ -1,5 +1,4 @@
 import React from "react";
-
 function LearnItem ({learnItem}) {
     return(
     <div className="container">
@@ -9,8 +8,8 @@ function LearnItem ({learnItem}) {
             </div>
             <div className="blog-post_info">
                 <div className="blog-post_date">
-                    <span>{learnItem.postername}</span>
-                    <span>Nov 12 2021</span>
+                    <span>Author Name: {learnItem.postername}</span>
+                    <span>Date Posted: {learnItem.postdate}</span>
                 </div>
                 <h1 className="blog-post_title">{learnItem.name}</h1>
                 <p className="blog-post_text">{learnItem.description}</p>
@@ -20,5 +19,4 @@ function LearnItem ({learnItem}) {
     </div>
     )
 }
-
 export default LearnItem;

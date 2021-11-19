@@ -1,71 +1,32 @@
-import React, { useRef, useState, useEffect } from "react"
-import axios from 'axios'
-import { useHistory } from "react-router-dom"
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "./AuthContext";
 import { ChatEngine, MessageFormSocial } from 'react-chat-engine'
-import { useAuth } from "./AuthContext"
-import { auth } from "./firebase"
+import { useHistory } from "react-router-dom"
 
-
-export default function Chats() {
-  const didMountRef = useRef(false)
-  const [ loading, setLoading ] = useState(true)
-  const { user } = useAuth()
-  const history = useHistory()
-
-  async function handleLogout() {
-    await auth.signOut()
-    localStorage.removeItem('email')
-    history.push('/login')
-  }
-
-  async function getFile(url) {
-    let response = await fetch(url);
-    let data = await response.blob();
-    return new File([data], "test.jpg", { type: 'image/jpeg' });
-  }
-
-  useEffect(() => {
-    if (!didMountRef.current) {
-      didMountRef.current = true
-      if (!user || user === null) {
-        history.push("/home")
-        return
-      }
-      
-      axios.get(
-        'https://api.chatengine.io/users/me/',
-        { headers: { 
-          "project-id": '9815f58e-8c40-4d7e-84f7-351ac5dca83a',
-          "user-name": user.email,
-          "user-secret": user.uid
-        }}
-      )
-
-      .then(() => setLoading(false))
-
-      .catch(() => {
-        let formdata = new FormData()
-        formdata.append('email', user.email)
-        formdata.append('username', user.email)
-        formdata.append('secret', user.uid)
-
-        getFile(user.photoURL)
-        .then(avatar => {
-          formdata.append('avatar', avatar, avatar.name)
-
-          axios.post(
-            'https://api.chatengine.io/users/',
-            formdata,
-            { headers: { "private-key": 'd0296654-8da6-46a8-a2fa-8101310567a9' }}
-          )
-          .then(() => setLoading(false))
-        })
-      })
-    }
-  }, [user, history])
+const Chats = () => {
+  const { username, secret } = useContext(Context);
+  const [chat, setChat] = useState(false);
+  const history = useHistory();
   
 
-  if (!user || loading) return <div />
+  useEffect(() => {
+    if (typeof document !== undefined) {
+      setChat(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (username === "" || secret === "") {
+      history.push("/login");
+    }
+  }, [username, secret, history]);
+
+  if (!chat) return <div />;
+
+  async function handleLogout() {
+    localStorage.removeItem('username')
+    history.push('/login')
+  }
 
   return (
     <div className='chats-page'>
@@ -74,15 +35,16 @@ export default function Chats() {
           Logout
         </div>
       </div>
-
-      <ChatEngine 
-        height='calc(100vh - 50px)'
-        projectID='9815f58e-8c40-4d7e-84f7-351ac5dca83a'
-        userName={user.email}
-        userSecret={user.uid}
-        renderNewMessageForm={() => <MessageFormSocial />}
-        onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
-      />
-    </div>
-  )
+        <ChatEngine
+          height="calc(100vh - 50px)"
+          projectID="9815f58e-8c40-4d7e-84f7-351ac5dca83a"
+          userName={username}
+          userSecret={secret}
+          renderNewMessageForm={() => <MessageFormSocial />}
+          onNewMessage={() => new Audio('https://chat-engine-assets.s3.amazonaws.com/click.mp3').play()}
+        />
+      </div>
+  );
 }
+
+export default Chats;
