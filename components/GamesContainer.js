@@ -1,10 +1,10 @@
 import GamesCard from "./GamesCard"
 import styled from "styled-components";
 
-function GamesContainer({filteredGames}){
+function GamesContainer({games}){
     return (
         <GameList>
-            {filteredGames.map(game => <GamesCard gamesObj={game} key={game.title}/>)}
+            {games.map(game => <GamesCard gamesObj={game} key={game.title}/>)}
         </GameList>
     )
 }
