@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Flatiron Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# https://FlatironHub.org/
 
-## Available Scripts
+or https://phase-2-chat.web.app/home
 
-In the project directory, you can run:
+<img width="1438" alt="Screen Shot 2021-11-18 at 11 40 36 PM" src="https://user-images.githubusercontent.com/12323032/142565952-094ca52e-5c1a-4b6a-ae98-45ea58717d97.png">
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Flatiron Hub allows you to connect with your classmates or friends via chatEngine and engange in 1 on 1 chats or group chats, offers a Games page for the latest free pc and web games, allows you to upload and access blogs posted by other people that engage in learning materials for Software Engineering, and last but not least allows you to connect peer to peer over video chat with another person(group video calls coming soon)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Flatiron Hub is a single-page app using React, NodeJs, PeerJs, WebRTC, chatEngine and Visual Studio Code.
 
-### `yarn test`
+##Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Note: Run commands from the root folder of the cloned repository.
 
-### `yarn build`
+To build the project from the command-line:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install
+npm run build
+npm start
+To view the app in the browser:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm install -g http-server
+http-server
+Open http://localhost:8080/ in your browser of choice.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To develop using Visual Studio Code:
 
-### `yarn eject`
+Install Visual Studio Code.
+Open the root folder of the cloned repository.
+The tasks.json file is configured to run the JavaScript compiler in watch mode. Press Cmd+Shift+B on Mac or Ctrl+Shift+B on Windows or Linux to start the watcher.
+To instantly view changes in the browser while developing:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Run npm run dev in a terminal. This will start both webpack in watch mode and http-server. Hint: Visual Studio Code contains a built-in terminal.
